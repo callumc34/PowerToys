@@ -501,7 +501,7 @@
                     </Directory>
 
                     <!-- Settings -->
-                    <Directory Id="SettingsV2InstallFolder" Name="Settings">
+                    <Directory Id="SettingsV2InstallFolder" Name="SettingsApp">
                         <Directory Id="SettingsV2AssetsInstallFolder" Name="Assets">
                             <Directory Id="SettingsV2OOBEAssetsFluentIconsInstallFolder" Name="FluentIcons" />
                             <Directory Id="SettingsV2AssetsModulesInstallFolder" Name="Modules" >
