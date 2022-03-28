@@ -148,7 +148,6 @@ namespace Microsoft.PowerToys.Settings.UI.WinUI3
                     // Create the Settings window so that it's fully initialized and
                     // it will be ready to receive the notification if the user opens
                     // the Settings from the tray icon.
-                    InitHiddenSettingsWindow();
                     if (ShowOobe)
                     {
                         PowerToysTelemetry.Log.WriteEvent(new OobeStartedEvent());
@@ -174,14 +173,6 @@ namespace Microsoft.PowerToys.Settings.UI.WinUI3
                 ShowMessageDialog("The application cannot be run as a standalone process. Please start the application through the runner.", "Forbidden");
             }
         }
-
-        private void InitHiddenSettingsWindow()
-        {
-            settingsWindow = new MainWindow();
-
-/*            Utils.ShowHide(settingsWindow);
-            Utils.CenterToScreen(settingsWindow);
-*/        }
 
         private async void ShowMessageDialog(string content, string title = null)
         {
