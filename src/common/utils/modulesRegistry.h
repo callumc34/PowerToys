@@ -221,7 +221,8 @@ inline registry::ChangeSet getStlThumbnailHandlerChangeSet(const std::wstring in
 inline std::vector<registry::ChangeSet> getAllOnByDefaultModulesChangeSets(const std::wstring installationDir)
 {
     constexpr bool PER_USER = true;
-    return { getSvgPreviewHandlerChangeSet(installationDir, PER_USER),
+    return { getFolderPreviewHandlerChangeSet(installationDir, PER_USER),
+             getSvgPreviewHandlerChangeSet(installationDir, PER_USER),
              getMdPreviewHandlerChangeSet(installationDir, PER_USER),
              getMonacoPreviewHandlerChangeSet(installationDir, PER_USER),
              getGcodePreviewHandlerChangeSet(installationDir, PER_USER),
@@ -233,7 +234,8 @@ inline std::vector<registry::ChangeSet> getAllOnByDefaultModulesChangeSets(const
 inline std::vector<registry::ChangeSet> getAllModulesChangeSets(const std::wstring installationDir)
 {
     constexpr bool PER_USER = true;
-    return { getSvgPreviewHandlerChangeSet(installationDir, PER_USER),
+    return { getFolderPreviewHandlerChangeSet(installationDir, PER_USER), 
+             getSvgPreviewHandlerChangeSet(installationDir, PER_USER),
              getMdPreviewHandlerChangeSet(installationDir, PER_USER),
              getMonacoPreviewHandlerChangeSet(installationDir, PER_USER),
              getPdfPreviewHandlerChangeSet(installationDir, PER_USER),

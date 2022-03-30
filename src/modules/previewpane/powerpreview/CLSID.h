@@ -10,6 +10,9 @@ const CLSID CLSID_SHIMActivateSvgPreviewHandler = { 0x74619BDA, 0xA66B, 0x451D, 
 // More details here: https://docs.microsoft.com/en-us/dotnet/framework/interop/registering-assemblies-with-com
 const CLSID CLSID_SvgPreviewHandler = { 0xddee2b8a, 0x6807, 0x48a6, { 0xbb, 0x20, 0x23, 0x38, 0x17, 0x4f, 0xf7, 0x79 } };
 
+// CB932234-2A16-4C68-8BED-29E71FF60A93
+const CLSID CLSID_SHIMActivateFolderPreviewHandler = { 0xcb932234, 0x2a16, 0x4c68, { 0x8b, 0xed, 0x29, 0xe7, 0x1f, 0xf6, 0x0a, 0x93 } };
+
 // eaf31d5b-002e-4c02-97ec-52aa008dfb77
 const CLSID CLSID_FolderPreviewHandler = { 0xeaf31d5b, 0x002e, 0x4c02, { 0x97, 0xec, 0x52, 0xaa, 0x00, 0x8d, 0xfb, 0x77 } };
 
@@ -47,10 +50,10 @@ const GUID CLSID_GcodeThumbnailProvider = { 0xbfee99b4, 0xb74d, 0x4348, { 0xbc, 
 const GUID CLSID_StlThumbnailProvider = { 0x8bc8afc2, 0x4e7c, 0x4695, { 0x81, 0x8e, 0x8c, 0x1f, 0xfd, 0xce, 0xa2, 0xaf } };
  
 // Pairs of NativeClsid vs ManagedClsid used for preview handlers.
-const std::vector<std::pair<CLSID, CLSID>> NativeToManagedClsid({ 
-    { CLSID_SHIMActivateMdPreviewHandler, CLSID_MdPreviewHandler },
-    { CLSID_SHIMActivatePdfPreviewHandler, CLSID_PdfPreviewHandler },
-    { CLSID_SHIMActivateGcodePreviewHandler, CLSID_GcodePreviewHandler },
-    { CLSID_SHIMActivateSvgPreviewHandler, CLSID_SvgPreviewHandler },
-    { CLSID_SHIMActivateSvgThumbnailProvider, CLSID_SvgThumbnailProvider }
-});
+const std::vector<std::pair<CLSID, CLSID>> NativeToManagedClsid({ { CLSID_SHIMActivateMdPreviewHandler, CLSID_MdPreviewHandler },
+                                                                  { CLSID_SHIMActivatePdfPreviewHandler, CLSID_PdfPreviewHandler },
+                                                                  { CLSID_SHIMActivateGcodePreviewHandler, CLSID_GcodePreviewHandler },
+                                                                  { CLSID_SHIMActivateSvgPreviewHandler, CLSID_SvgPreviewHandler },
+                                                                  { CLSID_SHIMActivateSvgThumbnailProvider, CLSID_SvgThumbnailProvider },
+                                                                  { CLSID_SHIMActivateFolderPreviewHandler, CLSID_FolderPreviewHandler }
+    });

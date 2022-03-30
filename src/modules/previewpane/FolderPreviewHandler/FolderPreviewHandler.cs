@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation
+// The Microsoft Corporation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
+using System;
 using System.Runtime.InteropServices;
 using Common;
 using Microsoft.PowerToys.Telemetry;
@@ -15,7 +19,7 @@ namespace Microsoft.PowerToys.PreviewHandler.Folder
     {
         private FolderPreviewHandlerControl _folderPreviewControl;
         private bool disposedValue;
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FolderPreviewHandler"/> class.
         /// </summary>

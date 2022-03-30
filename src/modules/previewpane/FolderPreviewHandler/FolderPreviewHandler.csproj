@@ -1,19 +1,53 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyTitle>PowerToys.FolderPreviewHandler</AssemblyTitle>
+    <AssemblyDescription>PowerToys FolderPreviewHandler</AssemblyDescription>
+    <Description>PowerToys FolderPreviewHandler</Description>
+    <DocumentationFile>$(SolutionDir)$(Platform)\$(Configuration)\modules\FileExplorerPreview\FolderPreviewPaneDocumentation.xml</DocumentationFile>
+    <OutputPath>$(SolutionDir)$(Platform)\$(Configuration)\modules\FileExplorerPreview\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AssemblyName>PowerToys.FolderPreviewHandler</AssemblyName>
+  </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <AssemblyName>PowerToys.FolderPreviewHandler</AssemblyName>
+    <ProjectGuid>{43DE046C-ECF7-4797-9929-51DF99B9B920}</ProjectGuid>
     <RootNamespace>Microsoft.PowerToys.PreviewHandler.Folder</RootNamespace>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>$(SolutionDir)$(Platform)\$(Configuration)\modules\FileExplorerPreview\FolderPreviewPaneDocumentation.xml</DocumentationFile>
-    <Version>0.0.1</Version>
-    <Description>PowerToys FolderPreview</Description>
+    <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+    <EnableComHosting>true</EnableComHosting>
+    <IntermediateOutputPath>$(SolutionDir)$(Platform)\$(Configuration)\obj\$(AssemblyName)\</IntermediateOutputPath>
   </PropertyGroup>
+
+  <Import Project="..\..\..\Version.props" />
+
+  <ItemGroup>
+    <Compile Include="..\..\..\codeAnalysis\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+    <Compile Update="FolderPreviewHandlerControl.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.IO.Abstractions" Version="12.2.5" />
+    <PackageReference Include="System.Runtime.WindowsRuntime" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\codeAnalysis\StyleCop.json">
+      <Link>StyleCop.json</Link>
+    </AdditionalFiles>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\ManagedTelemetry\Telemetry\ManagedTelemetry.csproj" />
-    <ProjectReference Include="..\Common\PreviewHandlerCommon.csproj" />
+    <ProjectReference Include="..\common\PreviewHandlerCommon.csproj" />
   </ItemGroup>
-
 </Project>
