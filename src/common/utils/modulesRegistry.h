@@ -13,6 +13,7 @@ namespace NonLocalizable
     const static wchar_t* MONACO_LANGUAGES_FILE_NAME = L"modules\\FileExplorerPreview\\monaco_languages.json";
     const static wchar_t* ListID = L"list";
     const static wchar_t* ExtensionsID = L"extensions";
+    const static std::vector<std::wstring> ExtFolder = { L"Folder" };
     const static std::vector<std::wstring> ExtSVG      = { L".svg" };
     const static std::vector<std::wstring> ExtMarkdown = { L".md", L".markdown", L".mdown", L".mkdn", L".mkd", L".mdwn", L".mdtxt", L".mdtext" };
     const static std::vector<std::wstring> ExtPDF      = { L".pdf" };
@@ -21,6 +22,22 @@ namespace NonLocalizable
     const static std::vector<std::wstring> ExtNoNoNo   = { 
         L".svgz" //Monaco cannot handle this file type at all; it's a binary file.
     };
+}
+
+inline registry::ChangeSet getFolderPreviewHandlerChangeSet(const std::wstring installationDir, const bool perUser)
+{
+    using namespace registry::shellex;
+    return generatePreviewHandler(PreviewHandlerType::preview,
+                                  perUser,
+                                  L"{eaf31d5b-002e-4c02-97ec-52aa008dfb77}",
+                                  get_std_product_version(),
+                                  (fs::path{ installationDir } /
+                                   LR"d(modules\FileExplorerPreview\PowerToys.FolderPreviewHandler.comhost.dll)d")
+                                      .wstring(),
+                                  registry::DOTNET_COMPONENT_CATEGORY_CLSID,
+                                  L"Microsoft.PowerToys.PreviewHandler.Folder.FolderPreviewHandler",
+                                  L"Folder Preview Handler",
+                                  NonLocalizable::ExtFolder);
 }
 
 inline registry::ChangeSet getSvgPreviewHandlerChangeSet(const std::wstring installationDir, const bool perUser)

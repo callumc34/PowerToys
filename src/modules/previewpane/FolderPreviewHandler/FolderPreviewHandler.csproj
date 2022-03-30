@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>PowerToys.FolderPreviewHandler</AssemblyName>
+    <RootNamespace>Microsoft.PowerToys.PreviewHandler.Folder</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>$(SolutionDir)$(Platform)\$(Configuration)\modules\FileExplorerPreview\FolderPreviewPaneDocumentation.xml</DocumentationFile>
+    <Version>0.0.1</Version>
+    <Description>PowerToys FolderPreview</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\ManagedTelemetry\Telemetry\ManagedTelemetry.csproj" />
+    <ProjectReference Include="..\Common\PreviewHandlerCommon.csproj" />
+  </ItemGroup>
+
+</Project>

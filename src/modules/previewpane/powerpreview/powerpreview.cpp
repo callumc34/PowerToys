@@ -26,6 +26,10 @@ PowerPreviewModule::PowerPreviewModule() :
 
     Logger::info("Initializing PowerPreviewModule");
     const bool installPerUser = true;
+    m_fileExplorerModules.push_back({ .settingName = L"folder-previewer-toggle-setting",
+                                      .settingDescription = GET_RESOURCE_STRING(IDS_PREVPANE_FOLDER_SETTINGS_DESCRIPTION),
+                                      .registryChanges = getFolderPreviewHandlerChangeSet(installationDir, installPerUser) });
+
     m_fileExplorerModules.push_back({ .settingName = L"svg-previewer-toggle-setting",
                                       .settingDescription = GET_RESOURCE_STRING(IDS_PREVPANE_SVG_SETTINGS_DESCRIPTION),
                                       .registryChanges = getSvgPreviewHandlerChangeSet(installationDir, installPerUser) });
