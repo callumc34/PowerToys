@@ -620,6 +620,10 @@
     <value>Enable Markdown preview  (.md, .markdown, .mdown, .mkdn, .mkd, .mdwn, .mdtxt, .mdtext)</value>
     <comment>Do not loc "Markdown".  Do you want this feature on / off</comment>
   </data>
+  <data name="FileExplorerPreview_ToggleSwitch_Preview_Folder.Header" xml:space="preserve">
+    <value>Enable Folder preview</value>
+    <comment>Do you want this feature on / off</comment>
+  </data>
   <data name="FileExplorerPreview_ToggleSwitch_Preview_Monaco.Header" xml:space="preserve">
     <value>Enable developer files preview (Example: .cpp, .py, ...)</value>
     <comment>Do you want this feature on / off</comment>

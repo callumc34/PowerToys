@@ -46,6 +46,23 @@ namespace Microsoft.PowerToys.Settings.UI.Library
             }
         }
 
+        private bool enableFolderPreview = true;
+
+        [JsonPropertyName("folder-previewer-toggle-setting")]
+        [JsonConverter(typeof(BoolPropertyJsonConverter))]
+        public bool EnableFolderPreview
+        {
+            get => enableFolderPreview;
+            set
+            {
+                if (value != enableFolderPreview)
+                {
+                    LogTelemetryEvent(value);
+                    enableFolderPreview = value;
+                }
+            }
+        }
+
         private bool enableMdPreview = true;
 
         [JsonPropertyName("md-previewer-toggle-setting")]
